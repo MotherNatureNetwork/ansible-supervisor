@@ -1,0 +1,8 @@
+---
+# defaults file for mnn.supervisor
+
+supervisor_command: echo 'success!'
+supervisor_directory: /bin
+supervisor_env: null
+supervisor_numprocs: 1
+supervisor_process_name: echo_process
