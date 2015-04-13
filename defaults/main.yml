@@ -6,3 +6,4 @@ supervisor_directory: /bin
 supervisor_env: null
 supervisor_numprocs: 1
 supervisor_process_name: echo_process
+supervisor_process_user: '{{ ansible_ssh_user }}'
