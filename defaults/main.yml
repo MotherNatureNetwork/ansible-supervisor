@@ -3,6 +3,7 @@
 
 supervisor_command: echo 'success!'
 supervisor_directory: /bin
+supervisor_log_directory: /var/log/supervisor
 supervisor_env: null
 supervisor_numprocs: 1
 supervisor_process_name: echo_process
