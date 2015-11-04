@@ -5,13 +5,15 @@
 
 - name: Install supervised processes
   template: src=process.conf dest=/etc/supervisor/conf.d/{{ supervisor_process_name }}.conf
-  notify:
-    - supervisor process restart
 
 - name: Make sure process group is present
   supervisorctl: name={{ supervisor_process_name }} state=present
-  notify:
-    - supervisor process restart
+
+- name: Stop process group
+  supervisorctl: name={{ supervisor_process_name }} state=stopped
+
+- name: Start process group
+  supervisorctl: name={{ supervisor_process_name }} state=started
 
 - name: Logging permissions
   file: path={{ supervisor_log_directory }}
