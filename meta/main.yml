@@ -14,4 +14,17 @@ galaxy_info:
   categories:
     - system
 
-dependencies: []
+dependencies:
+  - role: nickhammond.logrotate
+    become: true
+    logrotate_scripts:
+      - name: supervisor
+        path: /var/log/supervisor/*.log
+        options:
+          - daily
+          - rotate 7
+          - missingok
+          - compress
+          - delaycompress
+          - copytruncate
+          - sharedscripts
