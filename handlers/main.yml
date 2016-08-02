@@ -2,9 +2,9 @@
 # handlers file for mnn.supervisor
 
 - name: supervisor process restart
-  sudo: yes
+  become: yes
   supervisorctl: name={{ supervisor_process_name }} state=restarted
 
 - name: supervisor process reload
-  sudo: yes
+  become: yes
   supervisorctl: name={{ supervisor_process_name }} state=reloaded
