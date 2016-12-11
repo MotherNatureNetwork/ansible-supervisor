@@ -1,0 +1,5 @@
+- name: mnn.postgresql
+  src: https://github.com/MotherNatureNetwork/ansible-postgresql
+  version: v1.2.0
+
+- src: nickhammond.logrotate

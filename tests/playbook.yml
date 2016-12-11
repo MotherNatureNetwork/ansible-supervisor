@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - role: mnn.postgresql
+    - role: mnn.supervisor
+      supervisor_command: /usr/bin/pg
+      supervisor_process_name: postgres
+      supervisor_process_user: postgres
