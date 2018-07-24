@@ -5,6 +5,7 @@
 
 - name: Install supervised processes
   template: src=process.conf dest=/etc/supervisor/conf.d/{{ supervisor_process_name }}.conf
+  notify: supervisor process restart
 
 - name: Make sure supervisord is running
   systemd: name=supervisor state=started
